@@ -91,6 +91,9 @@ figcaption {
 
 }
 
+
+
+
 .largeview{
 	margin-left:auto;
 	margin-right:auto;
@@ -205,15 +208,17 @@ img.thumb {
 
 
 div#editswitch {
-	position: fixed;
+	/*position: fixed;*/
 	bottom: 0px;
 	height: 35px;
-	right:0px;
-	width:400px;
+	/*right:0px;*/
+	width:390px;
 	text-align: center;
 	color:#ddd;
 	background-color: #666666;
 	border-top-left-radius: 10px;
+	z-index: 100;
+	float:right;
 	/*transition: height .10s ease-in-out;*/
 
 	&.activated {
@@ -279,8 +284,56 @@ div#editswitch {
 	}
 }
 
+#clipboard{
+		min-height: 40px;
+		bottom:0;
+		background-color: #666;
+
+		figure{
+			@extend figure#resultview;
+			background-color: #000;
+			display:inline-block;
+			position: relative;
+			width: 50px;
+			height: 50px;
+			margin: 10px;
+
+			img{
+				@extend img.thumb;
+			}
+
+
+			&.smaller{
+				width: 2vw;
+				height: 2vw;
+				margin: 0.5vw;
+			}
+
+			&.smallest{
+				width: 1vw;
+				height: 1vw;
+			}
+
+		}
+
+		/*figure:hover{
+			position:absolute;
+			margin:-25px;
+			width:100px;
+			height:100px;
+			z-index: 5;
+		}*/
+}
+
+#footer{
+	right:0;
+	bottom: 0;
+	position: fixed;
+	width:100%;
+}
+
 div#searchswitch {
-	height: 35px;
+	min-height: 35px;
 	text-align: center;
 	cursor: pointer;
 	background-color: #FFFFFF;

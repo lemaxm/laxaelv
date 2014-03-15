@@ -18,8 +18,9 @@ var FilterView = function(){
         //var querybox = new Querybox();
         querybox.render();
         querybox.searchBoxListeners();
+        var clipboardview = new Clipboard();
     };
-    
+
     this.controlListeners = function(){
         $("button#deselect").click(function(e){
             e.stopImmediatePropagation();

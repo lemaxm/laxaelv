@@ -13,6 +13,7 @@
 
   var editView = new EditView();
 
+
   var updateCounter = function(){
     if(lax.isEditMode()) {
       $("#counter").text(lax.getSelectionCount() + ' Image(s) affected by changes');

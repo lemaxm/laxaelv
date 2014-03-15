@@ -134,7 +134,7 @@ function Laxaelv() {
   };
 
   self.initEditTagsForSelection = function(){
-    if(detailMode) 
+    if(detailMode)
       editTags = db.getCommonTags([imagesInView[iterator]]);
     else
       editTags = db.getCommonTags(selection, "intersection");
@@ -160,6 +160,10 @@ function Laxaelv() {
 
   self.getSelectionCount = function(){
     return selection.length;
+  };
+
+  self.getSelection = function(){
+    return selection;
   };
 
   self.getImagesInViewCount = function(){

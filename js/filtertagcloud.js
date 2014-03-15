@@ -16,6 +16,7 @@ function FilterTagcloud(){
         $('.tab').each(function(){
             $(this).toggleClass('active', $(this).hasClass(type));
         });
+
     };
 
     lax.on("typechange", function(){

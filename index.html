@@ -26,6 +26,20 @@
 		</figure>
 	</script>
 	-->
+
+	<script type="html/clipboard">
+		<div id="clipboard">
+
+		</div>
+	</script>
+
+	<script type="html/miniature">
+		<figure >
+			<img class="miniature" src="small/{name}" />
+		</figure>
+	</script>
+
+
 	<script type="html/detail">
 		<figure>
 			<div id="controls">
@@ -67,14 +81,16 @@
 			<button class="tab who">who</button>
 			<button class="tab other">other</button>
 		</div>
-		<div id="editswitch">
-			<div id="counter">0 of ?? selected</div>
-			<div id="control">
-				<button id="select">all</button>
-				<button id="deselect">none</button>
+		<div id="footer">
+			<div id="editswitch">
+				<div id="counter">0 of ?? selected</div>
+				<div id="control">
+					<button id="select">all</button>
+					<button id="deselect">none</button>
+				</div>
+				<h2>Editor</h2>
+				<span>click to switch<span>
 			</div>
-			<h2>Editor</h2>
-			<span>click to switch<span>
 		</div>
 	</script>
 
@@ -158,6 +174,7 @@
 		<script src="js/detailview.js"></script>
 		<script src="js/infoview.js"></script>
 		<script src="js/router.js"></script>
+		<script src="js/clipboardview.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>

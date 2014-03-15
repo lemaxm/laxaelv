@@ -7,6 +7,9 @@ var ResultView = function(){
     // Elements
     var lhsview = $("#lhsview");
 
+    //var domelement = $($.render(resulttemplate)).appendTo(lhsview)[0];
+
+
     //var up = new Upload();
 
     var imgClick = function() {
@@ -26,14 +29,9 @@ var ResultView = function(){
     };
 
     this.render = function(){
-
         lhsview.empty();
         $($.render(resulttemplate)).appendTo(lhsview);
-
         var resultview = $("#resultview");
-
-        //up.render(resultview);
-        //up.addListeners();
 
         var images = lax.getImages();
         images.forEach(function(element){
