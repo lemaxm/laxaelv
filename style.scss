@@ -39,6 +39,12 @@ section#details {
 	z-index: 2;
 }
 */
+
+
+$bright_bg_edit: #666;
+$border_edit: #aaa;
+$dark_bg_edit: #444;
+
 h2 {
 	color:#555;
 	font-size: 20pt;
@@ -215,7 +221,7 @@ div#editswitch {
 	width:390px;
 	text-align: center;
 	color:#ddd;
-	background-color: #666666;
+	background-color: $dark_bg_edit;
 	border-top-left-radius: 10px;
 	z-index: 100;
 	float:right;
@@ -284,7 +290,7 @@ div#editswitch {
 #clipboard{
 		min-height: 40px;
 		bottom:0;
-		background-color: #666;
+		background-color: $dark_bg_edit;
 
 
 
@@ -607,9 +613,7 @@ div#searchswitch {
 }
 
 
-$bright_bg_edit: #666;
-$border_edit: #aaa;
-$dark_bg_edit: #444;
+
 
 .editmode{
 	background-color: $bright_bg_edit;
