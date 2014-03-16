@@ -289,11 +289,12 @@ div#editswitch {
 
 
 		#miniatures{
-			padding-left:0px;
+			padding-left:0;
 			height: 100%;
 			overflow-x: scroll;
 			overflow-y: hidden;
 			white-space: nowrap;
+
 		}
 
 
@@ -305,23 +306,13 @@ div#editswitch {
 			width: 50px;
 			height: 50px;
 			margin: 10px 0 10px 10px;
-			opacity: 0.5;
+			opacity: 0.7;
+			border: 1px solid black;
+
 
 
 			img{
 				@extend img.thumb;
-			}
-
-
-			&.smaller{
-				width: 2vw;
-				height: 2vw;
-				margin: 0.5vw;
-			}
-
-			&.smallest{
-				width: 1vw;
-				height: 1vw;
 			}
 
 		}
