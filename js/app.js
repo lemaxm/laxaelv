@@ -29,6 +29,7 @@
 
     if(lax.getSelectionCount()>0) {
       if(!lax.isDetailMode()) {
+        $('#footer').addClass('activated');
         $('#editswitch').addClass('activated');
         $('#editswitch').click(function(){
             lax.toggleEditMode();
@@ -36,6 +37,7 @@
       }
     } else {
       if(!lax.isDetailMode()) {
+        $('#footer').removeClass('activated');
         $('#editswitch').removeClass('activated');
         $('#editswitch').unbind('click');
       }
@@ -93,6 +95,8 @@
   lax.on("modechange", function(){
     console.log('modechange event');
     renderRHS();
+    if(!lax.isDetailMode())
+      renderImages();
     updateCounter();
   });
 

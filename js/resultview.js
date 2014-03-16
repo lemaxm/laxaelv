@@ -34,6 +34,8 @@ var ResultView = function(){
         var resultview = $("#resultview");
 
         var images = lax.getImages();
+        if(lax.isEditMode()) images = lax.getSelection();
+
         images.forEach(function(element){
             // DOM Manipulation
             var fignode = document.createElement('figure');

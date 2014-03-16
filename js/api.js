@@ -300,9 +300,12 @@ function Laxaelv() {
   };
 
   self.selectAll = function(){
-    selection = [];
+    //selection = [];
     for(var image in imagesInView) {
-      selection.push(imagesInView[image]);
+      var  element = imagesInView[image];
+      console.log($.inArray(element, selection));
+      if($.inArray(element, selection)!==-1) continue;
+      selection.push(element);
     }
     self.trigger("selectchange");
   };

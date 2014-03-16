@@ -226,10 +226,7 @@ div#editswitch {
 		height: 70px;
 		transition: height .10s ease-in-out;
 	}
-	&.activated:hover {
-		height: 100px;
-		transition: height .10s ease-in-out;
-	}
+
 
 	&.infoview {
 		cursor: pointer;
@@ -289,6 +286,17 @@ div#editswitch {
 		bottom:0;
 		background-color: #666;
 
+
+
+		#miniatures{
+			padding-left:0px;
+			height: 100%;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			white-space: nowrap;
+		}
+
+
 		figure{
 			@extend figure#resultview;
 			background-color: #000;
@@ -296,7 +304,9 @@ div#editswitch {
 			position: relative;
 			width: 50px;
 			height: 50px;
-			margin: 10px;
+			margin: 10px 0 10px 10px;
+			opacity: 0.5;
+
 
 			img{
 				@extend img.thumb;
@@ -316,13 +326,6 @@ div#editswitch {
 
 		}
 
-		/*figure:hover{
-			position:absolute;
-			margin:-25px;
-			width:100px;
-			height:100px;
-			z-index: 5;
-		}*/
 }
 
 #footer{
@@ -330,6 +333,35 @@ div#editswitch {
 	bottom: 0;
 	position: fixed;
 	width:100%;
+
+	&.activated:hover{
+		#editswitch.activated{
+			height: 100px;
+			transition: height .10s ease-in-out;
+		}
+
+		#clipboard{
+			height: 100px;
+
+			figure{
+				margin-top: 20px;
+				height: 70px;
+				width: 70px;
+			}
+
+			figure:hover{
+				filter: none;
+				margin-top: 0;
+				margin-bottom: 0;
+				margin-left:-25px;
+				opacity: 1;
+				width:100px;
+				height:100px;
+				z-index: 5;
+			}
+		}
+	}
+
 }
 
 div#searchswitch {
