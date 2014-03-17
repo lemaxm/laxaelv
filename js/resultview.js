@@ -64,9 +64,25 @@ var ResultView = function(){
         });
     };
 
+    this.updateSelectionStatus = function(){
+        console.log("update Status");
+
+        $('#resultview').children().each(function(index){
+            var imageelement = $(this).children('img');
+            var imageid = $(imageelement).attr('id');
+
+            if(!lax.isSelected(imageid))
+                $(this).removeClass('marked');
+        });
+    };
+
     // Events
     lax.on("querychange", function(){
         this.render();
+    }.bind(this));
+
+    lax.on("selectchange", function(){
+        this.updateSelectionStatus();
     }.bind(this));
 
     return this;

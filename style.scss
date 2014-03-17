@@ -301,6 +301,10 @@ div#editswitch {
 			overflow-y: hidden;
 			white-space: nowrap;
 
+			button{
+				display:none;
+			}
+
 		}
 
 
@@ -355,6 +359,20 @@ div#editswitch {
 				width:100px;
 				height:100px;
 				z-index: 5;
+
+				button{
+					position:absolute;
+					display:block;
+					right:0;
+					z-index: 6;
+					background-color: $bright_bg_edit;
+					color: #fff;
+					border-radius: 10px;
+
+					&:hover{
+						background-color: $dark_bg_edit;
+					}
+				}
 			}
 		}
 	}

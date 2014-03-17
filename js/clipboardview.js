@@ -59,11 +59,17 @@ function Clipboard(){
 
 function Miniature(parentview, data){
     var thumbnailtemplate = $("[type='html/miniature']").html();
+    var imageid = data.name;
+
 
     var domelement = $($.render(thumbnailtemplate, data)).appendTo(parentview);
+
     $(domelement).children("img").click(function(){
-        console.log(this);
-        var image = $(this).attr("id");
-        lax.chooseImage(image);
+        lax.chooseImage(imageid);
     });
+
+    $(domelement).children("button").click(function(){
+        lax.deselectImage(imageid);
+    });
+
 }
