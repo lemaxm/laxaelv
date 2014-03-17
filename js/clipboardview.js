@@ -64,9 +64,10 @@ function Miniature(parentview, data){
 
     var domelement = $($.render(thumbnailtemplate, data)).appendTo(parentview);
 
-    $(domelement).children("img").click(function(){
+    /*$(domelement).children("img").click(function(){
+        console.log(imageid);
         lax.chooseImage(imageid);
-    });
+    });*/
 
     $(domelement).children("button").click(function(){
         lax.deselectImage(imageid);
