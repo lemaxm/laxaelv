@@ -118,7 +118,7 @@ function Laxaelv() {
   };
 
   self.setSearchString = function(word){
-    var word = word.toLocaleLowerCase().valueOf();
+    word = word.toLocaleLowerCase().valueOf();
     self.searchString = word;
     self.trigger("typechange");
   };
@@ -199,13 +199,24 @@ function Laxaelv() {
     self.trigger("modechange");
   };
 
+  self.backToSearch = function(tags){
+    detailMode = false;
+    query = [];
+    tags.forEach(function(tag){
+      tag = tag.toLocaleLowerCase().valueOf();
+      query.push(tag);
+    });
+    self.searchString = "";
+    self.trigger("backToSearch");
+  };
+
   self.isDetailMode = function(){
     return detailMode;
   };
 
   /* immediately saving changes */
   self.saveTag = function(tag) {
-    var tag = tag.toLocaleLowerCase().valueOf();
+    tag = tag.toLocaleLowerCase().valueOf();
     if(detailMode) {
       db.addTag(tag, [imagesInView[iterator]]);
     } else {
@@ -218,7 +229,7 @@ function Laxaelv() {
   };
 
   self.removeTag = function(tag) {
-    var tag = tag.toLocaleLowerCase().valueOf();
+    tag = tag.toLocaleLowerCase().valueOf();
     if(detailMode) {
       db.removeTags(imagesInView[iterator], [tag]);
     } else {
@@ -270,6 +281,7 @@ function Laxaelv() {
   };
 
   self.addTagsToQuery = function(tags){
+    detailMode = false;
     query = [];
     tags.forEach(function(tag){
       var tag = tag.toLocaleLowerCase().valueOf();

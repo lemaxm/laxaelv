@@ -40,7 +40,8 @@ function Router(){
     this.searchTags = function(values){
         //lax.deactivateEditMode();
         //lax.deactivateDetailMode();
-        lax.addTagsToQuery(values);
+        //lax.addTagsToQuery(values);
+        lax.backToSearch(values);
     };
 
 
@@ -85,7 +86,7 @@ function Router(){
     }.bind(this));
 
     lax.on("modechange", function(){
-        /*if(lax.isEditMode()) this.updateEditURL();*/ 
+        /*if(lax.isEditMode()) this.updateEditURL();*/
         if(lax.isDetailMode()) this.updateDetailURL();
         else this.updateSearchURL();
     }.bind(this));

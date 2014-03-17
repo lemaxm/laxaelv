@@ -50,11 +50,20 @@ function Clipboard(){
         this.render();
     }.bind(this));
 
+    lax.on("backToSearch", function(){
+        this.render();
+    }.bind(this));
+
 }
 
 
 function Miniature(parentview, data){
     var thumbnailtemplate = $("[type='html/miniature']").html();
 
-    $($.render(thumbnailtemplate, data)).appendTo(parentview);
+    var domelement = $($.render(thumbnailtemplate, data)).appendTo(parentview);
+    $(domelement).children("img").click(function(){
+        console.log(this);
+        var image = $(this).attr("id");
+        lax.chooseImage(image);
+    });
 }

@@ -18,7 +18,7 @@
     if(lax.isEditMode()) {
       $("#counter").text(lax.getSelectionCount() + ' Image(s) affected by changes');
     } else {
-      $("#counter").text(lax.getSelectionCount()+" of "+lax.getImagesInViewCount() + " selected");
+      $("#counter").text(lax.getSelectionCount()+ " selected");
     }
 
     if(lax.isDetailMode()) {
@@ -106,6 +106,13 @@
     renderDetailView();
     renderRHS();
     //updateCounter();
+  });
+
+  lax.on("backToSearch", function(){
+    renderRHS();
+    renderImages();
+    updateCounter();
+    console.log("back to the search!");
   });
 
   lax.initDB();
